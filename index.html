@@ -8,7 +8,11 @@
     <!-- तपाईंको Google AdSense Meta Tag -->
     <meta name="google-adsense-account" content="ca-pub-3126118801262410">
 
-    <!-- Fonts -->
+    <!-- Google AdSense Live Script Loader (Head भित्र हुनुपर्छ) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3126118801262410"
+         crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
@@ -35,7 +39,7 @@
             line-height: 1.7;
         }
 
-        /* Top Bar */
+        /* Top Announcement */
         .top-bar {
             background-color: var(--primary-dark);
             color: #d1fae5;
@@ -107,7 +111,7 @@
             background: #f0fdf4;
         }
 
-        /* Container Sections */
+        /* View Switching System */
         .tab-content {
             display: none;
             animation: fadeIn 0.3s ease-in-out;
@@ -128,7 +132,7 @@
             padding: 0 1.5rem;
         }
 
-        /* Hero */
+        /* Hero Banner */
         .hero {
             background: linear-gradient(rgba(15, 61, 19, 0.88), rgba(27, 94, 32, 0.92)), 
                         url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80') center/cover;
@@ -158,6 +162,7 @@
             font-size: 1.05rem;
             border-radius: 50px;
             display: inline-block;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
         }
 
         /* Category Grid */
@@ -175,7 +180,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.5rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
 
         .category-card {
@@ -192,19 +197,28 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Ad Unit Space */
-        .adsense-box {
-            background: #e2e8f0;
-            border: 2px dashed #94a3b8;
-            color: #475569;
-            text-align: center;
-            padding: 2.5rem 1rem;
+        /* Google Live Ad Container */
+        .ad-container-box {
+            background: var(--white);
             border-radius: 8px;
-            margin: 2.5rem 0;
-            font-weight: 600;
+            border: 1px solid #e2e8f0;
+            padding: 1.2rem;
+            margin: 2.5rem auto;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            overflow: hidden;
         }
 
-        /* Policy & Text Pages Style */
+        .ad-tag-label {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        /* Policy & Text Pages */
         .policy-card {
             background: var(--white);
             padding: 2.5rem;
@@ -227,7 +241,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Contact Grid */
+        /* Contact Details */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -319,11 +333,11 @@
 
     <!-- Top Announcement -->
     <div class="top-bar">
-        <div>🚚 ताजा तथा गुणस्तरीय दैनिक खाद्यान्न सामानको भरपर्दो सेवा</div>
+        <div>🚚 ताजा तथा शुद्ध किराना सामानको भरपर्दो पसल</div>
         <div>इमेल: <a href="mailto:info@lamsalkiranastores.com.np">info@lamsalkiranastores.com.np</a></div>
     </div>
 
-    <!-- Main Navigation Header -->
+    <!-- Navigation Header -->
     <header>
         <div class="navbar">
             <div class="logo">
@@ -381,10 +395,22 @@
                 </div>
             </div>
 
-            <!-- Google AdSense Unit Placement -->
-            <div class="adsense-box">
-                📢 Google AdSense विज्ञापन स्थान (खाता प्रमाणीकरण पछि यहाँ Ads देखिनेछन्)
+            <!-- ================= तपाईंको LIVE GOOGLE ADSENSE CODE ================= -->
+            <div class="ad-container-box">
+                <span class="ad-tag-label">विज्ञापन (Advertisement)</span>
+                
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-format="fluid"
+                     data-ad-layout-key="-fb+5w+4e-db+86"
+                     data-ad-client="ca-pub-3126118801262410"
+                     data-ad-slot="2676104454"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
+            <!-- =================================================================== -->
+
         </main>
     </div>
 
@@ -440,7 +466,7 @@
         </main>
     </div>
 
-    <!-- 4. PRIVACY POLICY VIEW (गोपनीयता नीति - AdSense Required) -->
+    <!-- 4. PRIVACY POLICY VIEW (गोपनीयता नीति) -->
     <div id="view-privacy" class="tab-content">
         <main class="container">
             <div class="policy-card">
@@ -501,7 +527,7 @@
                 </ul>
             </div>
             <div>
-                <h4>कानुनी नीतिहरू (AdSense Legal)</h4>
+                <h4>कानुनी नीतिहरू</h4>
                 <ul>
                     <li><a onclick="switchPage('privacy')">गोपनीयता नीति (Privacy Policy)</a></li>
                     <li><a onclick="switchPage('terms')">नियम तथा सर्तहरू (Terms & Conditions)</a></li>
@@ -514,30 +540,25 @@
         </div>
     </footer>
 
-    <!-- Single Page Interactive Navigation Script -->
+    <!-- Tab Navigation Script -->
     <script>
         function switchPage(pageId) {
-            // Hide all tab contents
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
 
-            // Remove active style from all nav buttons
             const navLinks = document.querySelectorAll('.nav-links a');
             navLinks.forEach(link => link.classList.remove('active'));
 
-            // Show current view
             const target = document.getElementById('view-' + pageId);
             if (target) {
                 target.classList.add('active');
             }
 
-            // Set active navigation button
             const activeNav = document.getElementById('nav-' + pageId);
             if (activeNav) {
                 activeNav.classList.add('active');
             }
 
-            // Scroll smoothly to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
