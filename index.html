@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>लम्साल किराना स्टोर्स | Lamsal Kirana Stores</title>
+    <title>लम्साल किराना स्टोर्स | Lamsal Kirana Stores - गुणस्तरीय खाद्यान्न</title>
     
-    <!-- तपाईंको Google AdSense Meta Tag -->
+    <!-- १. तपाईंको Google AdSense Meta Tag -->
     <meta name="google-adsense-account" content="ca-pub-3126118801262410">
 
-    <!-- Google AdSense Live Script Loader (Head भित्र हुनुपर्छ) -->
+    <!-- २. Google AdSense आधिकारिक Live Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3126118801262410"
          crossorigin="anonymous"></script>
 
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
@@ -43,7 +45,7 @@
         .top-bar {
             background-color: var(--primary-dark);
             color: #d1fae5;
-            padding: 6px 15px;
+            padding: 7px 15px;
             font-size: 0.9rem;
             display: flex;
             justify-content: space-between;
@@ -75,6 +77,10 @@
             align-items: center;
         }
 
+        .logo {
+            text-decoration: none;
+        }
+
         .logo h1 {
             font-size: 1.5rem;
             color: var(--primary);
@@ -101,8 +107,8 @@
             font-weight: 600;
             font-size: 1rem;
             cursor: pointer;
-            padding: 5px 8px;
-            border-radius: 4px;
+            padding: 6px 12px;
+            border-radius: 6px;
             transition: all 0.2s;
         }
 
@@ -111,7 +117,7 @@
             background: #f0fdf4;
         }
 
-        /* View Switching System */
+        /* Tab Routing */
         .tab-content {
             display: none;
             animation: fadeIn 0.3s ease-in-out;
@@ -122,7 +128,7 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
+            from { opacity: 0; transform: translateY(6px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -132,81 +138,93 @@
             padding: 0 1.5rem;
         }
 
-        /* Hero Banner */
+        /* Hero */
         .hero {
-            background: linear-gradient(rgba(15, 61, 19, 0.88), rgba(27, 94, 32, 0.92)), 
+            background: linear-gradient(rgba(15, 61, 19, 0.9), rgba(27, 94, 32, 0.92)), 
                         url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80') center/cover;
             color: var(--white);
-            padding: 4rem 1.5rem;
+            padding: 4.5rem 1.5rem;
             text-align: center;
         }
 
         .hero h2 {
-            font-size: 2.4rem;
+            font-size: 2.5rem;
             margin-bottom: 0.8rem;
             font-weight: 800;
         }
 
         .hero p {
             font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 1.8rem;
+            max-width: 720px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
         }
 
         .btn-order {
             background-color: #25d366;
             color: white;
-            padding: 0.8rem 1.8rem;
+            padding: 0.85rem 2rem;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             border-radius: 50px;
             display: inline-block;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s;
         }
 
-        /* Category Grid */
+        .btn-order:hover {
+            transform: scale(1.04);
+        }
+
+        /* Categories */
         .section-header {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
 
         .section-header h2 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--primary);
         }
 
         .category-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
             gap: 1.5rem;
             margin-bottom: 2.5rem;
         }
 
         .category-card {
             background: var(--white);
-            border-radius: 10px;
-            padding: 1.8rem 1.2rem;
+            border-radius: 12px;
+            padding: 2rem 1.2rem;
             text-align: center;
             border: 1px solid #e2e8f0;
             border-top: 4px solid var(--primary);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: transform 0.2s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-4px);
         }
 
         .category-card .icon {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 0.5rem;
         }
 
-        /* Google Live Ad Container */
+        /* Google Live Ad Slot Container */
         .ad-container-box {
             background: var(--white);
-            border-radius: 8px;
+            border-radius: 10px;
             border: 1px solid #e2e8f0;
-            padding: 1.2rem;
-            margin: 2.5rem auto;
+            padding: 1.5rem;
+            margin: 3rem auto;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            min-height: 120px;
         }
 
         .ad-tag-label {
@@ -214,14 +232,14 @@
             color: #94a3b8;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             display: block;
         }
 
-        /* Policy & Text Pages */
+        /* Content / Legal Cards */
         .policy-card {
             background: var(--white);
-            padding: 2.5rem;
+            padding: 3rem 2.5rem;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.04);
             margin-bottom: 2rem;
@@ -230,56 +248,70 @@
         .policy-card h2 {
             color: var(--primary);
             margin-bottom: 1rem;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             border-bottom: 2px solid #e2e8f0;
             padding-bottom: 0.5rem;
         }
 
         .policy-card h3 {
             color: var(--text-dark);
-            margin-top: 1.5rem;
+            margin-top: 1.8rem;
             margin-bottom: 0.5rem;
+            font-size: 1.25rem;
         }
 
-        /* Contact Details */
+        /* Contact Details Grid */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
+            margin-top: 1.5rem;
         }
 
         .info-pane {
             background: #f0fdf4;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--primary);
+            padding: 1.8rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .info-pane h3 {
+            margin-top: 0;
+            color: var(--primary);
+            margin-bottom: 1rem;
         }
 
         input, textarea {
             width: 100%;
-            padding: 10px;
+            padding: 11px;
             margin-top: 5px;
             margin-bottom: 15px;
             border: 1px solid #cbd5e1;
             border-radius: 6px;
+            font-size: 1rem;
         }
 
         button.btn-submit {
             background: var(--primary);
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 24px;
             font-size: 1rem;
-            font-weight: bold;
+            font-weight: 700;
             border-radius: 6px;
             cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button.btn-submit:hover {
+            background: var(--primary-dark);
         }
 
         /* Footer */
         footer {
             background-color: #0b1e10;
             color: #94a3b8;
-            padding: 3rem 1.5rem 1.5rem;
+            padding: 3.5rem 1.5rem 1.5rem;
             margin-top: 4rem;
         }
 
@@ -288,13 +320,14 @@
             margin: auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
             border-bottom: 1px solid #1e3a24;
             padding-bottom: 2rem;
         }
 
         .footer-content h4 {
             color: white;
+            font-size: 1.2rem;
             margin-bottom: 1rem;
         }
 
@@ -303,13 +336,14 @@
         }
 
         .footer-content li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
         }
 
         .footer-content a {
             color: #94a3b8;
             text-decoration: none;
             cursor: pointer;
+            transition: color 0.2s;
         }
 
         .footer-content a:hover {
@@ -324,8 +358,10 @@
 
         @media(max-width: 768px) {
             .navbar { flex-direction: column; gap: 1rem; }
-            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 0.6rem; }
+            .hero h2 { font-size: 2rem; }
             .contact-grid { grid-template-columns: 1fr; }
+            .policy-card { padding: 1.5rem; }
         }
     </style>
 </head>
@@ -333,19 +369,17 @@
 
     <!-- Top Announcement -->
     <div class="top-bar">
-        <div>🚚 ताजा तथा शुद्ध किराना सामानको भरपर्दो पसल</div>
+        <div>🚚 ताजा तथा शुद्ध दैनिक किराना सामानको भरपर्दो पसल</div>
         <div>इमेल: <a href="mailto:info@lamsalkiranastores.com.np">info@lamsalkiranastores.com.np</a></div>
     </div>
 
     <!-- Navigation Header -->
     <header>
         <div class="navbar">
-            <div class="logo">
-                <a href="javascript:void(0)" onclick="switchPage('home')" style="text-decoration: none;">
-                    <h1>लम्साल किराना स्टोर्स</h1>
-                    <span>LAMSAL KIRANA STORES</span>
-                </a>
-            </div>
+            <a href="javascript:void(0)" onclick="switchPage('home')" class="logo">
+                <h1>लम्साल किराना स्टोर्स</h1>
+                <span>LAMSAL KIRANA STORES</span>
+            </a>
             <ul class="nav-links">
                 <li><a onclick="switchPage('home')" id="nav-home" class="active">गृहपृष्ठ</a></li>
                 <li><a onclick="switchPage('about')" id="nav-about">हाम्रो बारेमा</a></li>
@@ -356,11 +390,11 @@
         </div>
     </header>
 
-    <!-- 1. HOME VIEW (गृहपृष्ठ) -->
+    <!-- ================= 1. HOME VIEW (गृहपृष्ठ) ================= -->
     <div id="view-home" class="tab-content active">
         <section class="hero">
             <h2>तपाईंको भान्साको भरपर्दो साथी</h2>
-            <p>दाल, चामल, तेल, मसला र दैनिक उपभोग्य किराना सामानहरू अब सस्तो र उचित मूल्यमा पाउनुहोस्।</p>
+            <p>दाल, चामल, तेल, मसला र दैनिक उपभोग्य किराना सामानहरू अब सस्तो र उचित मूल्यमा पाउनुहोस्। छिटो होम डेलिभरी सेवा उपलब्ध छ।</p>
             <a href="https://wa.me/9779800000000?text=नमस्ते%20लम्साल%20किराना%20स्टोर्स,%20मलाई%20सामान%20अर्डर%20गर्नु%20थियो।" target="_blank" class="btn-order">
                 📲 ह्वाट्सएपबाट अर्डर गर्नुहोस्
             </a>
@@ -395,7 +429,7 @@
                 </div>
             </div>
 
-            <!-- ================= तपाईंको LIVE GOOGLE ADSENSE CODE ================= -->
+            <!-- ========== तपाईंको LIVE GOOGLE ADSENSE CODE ========== -->
             <div class="ad-container-box">
                 <span class="ad-tag-label">विज्ञापन (Advertisement)</span>
                 
@@ -409,12 +443,12 @@
                      (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
-            <!-- =================================================================== -->
+            <!-- ==================================================== -->
 
         </main>
     </div>
 
-    <!-- 2. ABOUT US VIEW (हाम्रो बारेमा) -->
+    <!-- ================= 2. ABOUT US VIEW (हाम्रो बारेमा) ================= -->
     <div id="view-about" class="tab-content">
         <main class="container">
             <div class="policy-card">
@@ -434,7 +468,7 @@
         </main>
     </div>
 
-    <!-- 3. CONTACT US VIEW (सम्पर्क) -->
+    <!-- ================= 3. CONTACT US VIEW (सम्पर्क) ================= -->
     <div id="view-contact" class="tab-content">
         <main class="container">
             <div class="policy-card">
@@ -466,7 +500,7 @@
         </main>
     </div>
 
-    <!-- 4. PRIVACY POLICY VIEW (गोपनीयता नीति) -->
+    <!-- ================= 4. PRIVACY POLICY VIEW (गोपनीयता नीति) ================= -->
     <div id="view-privacy" class="tab-content">
         <main class="container">
             <div class="policy-card">
@@ -489,7 +523,7 @@
         </main>
     </div>
 
-    <!-- 5. TERMS AND CONDITIONS VIEW (नियम तथा सर्तहरू) -->
+    <!-- ================= 5. TERMS AND CONDITIONS VIEW (सर्तहरू) ================= -->
     <div id="view-terms" class="tab-content">
         <main class="container">
             <div class="policy-card">
@@ -527,7 +561,7 @@
                 </ul>
             </div>
             <div>
-                <h4>कानुनी नीतिहरू</h4>
+                <h4>कानुनी नीतिहरू (AdSense Legal)</h4>
                 <ul>
                     <li><a onclick="switchPage('privacy')">गोपनीयता नीति (Privacy Policy)</a></li>
                     <li><a onclick="switchPage('terms')">नियम तथा सर्तहरू (Terms & Conditions)</a></li>
@@ -540,7 +574,7 @@
         </div>
     </footer>
 
-    <!-- Tab Navigation Script -->
+    <!-- Tab Navigation & Hash URL Support -->
     <script>
         function switchPage(pageId) {
             const contents = document.querySelectorAll('.tab-content');
@@ -559,8 +593,17 @@
                 activeNav.classList.add('active');
             }
 
+            window.location.hash = pageId;
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // URL मा #about, #privacy जस्ता ह्यास भएमा सोझै खोल्ने
+        window.addEventListener('load', function() {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && document.getElementById('view-' + hash)) {
+                switchPage(hash);
+            }
+        });
     </script>
 
 </body>
