@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>लम्साल किराना स्टोर्स | Lamsal Kirana Stores</title>
+    
+    <!-- तपाईंको Google AdSense Meta Tag -->
+    <meta name="google-adsense-account" content="ca-pub-3126118801262410">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #1b5e20;
+            --primary-dark: #0f3d13;
+            --accent: #e65100;
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Mukta', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--primary-dark);
+            color: #d1fae5;
+            padding: 6px 15px;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .top-bar a {
+            color: #fef08a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Navbar */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1150px;
+            margin: auto;
+            padding: 0.8rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .logo span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 5px 8px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+            background: #f0fdf4;
+        }
+
+        /* Container Sections */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(15, 61, 19, 0.88), rgba(27, 94, 32, 0.92)), 
+                        url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80') center/cover;
+            color: var(--white);
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.4rem;
+            margin-bottom: 0.8rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 1.8rem;
+        }
+
+        .btn-order {
+            background-color: #25d366;
+            color: white;
+            padding: 0.8rem 1.8rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        /* Category Grid */
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .category-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.8rem 1.2rem;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            border-top: 4px solid var(--primary);
+        }
+
+        .category-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Ad Unit Space */
+        .adsense-box {
+            background: #e2e8f0;
+            border: 2px dashed #94a3b8;
+            color: #475569;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            border-radius: 8px;
+            margin: 2.5rem 0;
+            font-weight: 600;
+        }
+
+        /* Policy & Text Pages Style */
+        .policy-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            margin-bottom: 2rem;
+        }
+
+        .policy-card h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        .policy-card h3 {
+            color: var(--text-dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .info-pane {
+            background: #f0fdf4;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+        }
+
+        button.btn-submit {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0b1e10;
+            color: #94a3b8;
+            padding: 3rem 1.5rem 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            border-bottom: 1px solid #1e3a24;
+            padding-bottom: 2rem;
+        }
+
+        .footer-content h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-content ul {
+            list-style: none;
+        }
+
+        .footer-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-content a {
+            color: #94a3b8;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .footer-content a:hover {
+            color: #22c55e;
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 0.9rem;
+            padding-top: 1.5rem;
+        }
+
+        @media(max-width: 768px) {
+            .navbar { flex-direction: column; gap: 1rem; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Announcement -->
+    <div class="top-bar">
+        <div>🚚 ताजा तथा गुणस्तरीय दैनिक खाद्यान्न सामानको भरपर्दो सेवा</div>
+        <div>इमेल: <a href="mailto:info@lamsalkiranastores.com.np">info@lamsalkiranastores.com.np</a></div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="javascript:void(0)" onclick="switchPage('home')" style="text-decoration: none;">
+                    <h1>लम्साल किराना स्टोर्स</h1>
+                    <span>LAMSAL KIRANA STORES</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a onclick="switchPage('home')" id="nav-home" class="active">गृहपृष्ठ</a></li>
+                <li><a onclick="switchPage('about')" id="nav-about">हाम्रो बारेमा</a></li>
+                <li><a onclick="switchPage('contact')" id="nav-contact">सम्पर्क</a></li>
+                <li><a onclick="switchPage('privacy')" id="nav-privacy">गोपनीयता नीति</a></li>
+                <li><a onclick="switchPage('terms')" id="nav-terms">नियम तथा सर्तहरू</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 1. HOME VIEW (गृहपृष्ठ) -->
+    <div id="view-home" class="tab-content active">
+        <section class="hero">
+            <h2>तपाईंको भान्साको भरपर्दो साथी</h2>
+            <p>दाल, चामल, तेल, मसला र दैनिक उपभोग्य किराना सामानहरू अब सस्तो र उचित मूल्यमा पाउनुहोस्।</p>
+            <a href="https://wa.me/9779800000000?text=नमस्ते%20लम्साल%20किराना%20स्टोर्स,%20मलाई%20सामान%20अर्डर%20गर्नु%20थियो।" target="_blank" class="btn-order">
+                📲 ह्वाट्सएपबाट अर्डर गर्नुहोस्
+            </a>
+        </section>
+
+        <main class="container">
+            <div class="section-header">
+                <h2>हाम्रा सामानहरू (Categories)</h2>
+                <p>दैनिक जीवनमा चाहिने सम्पूर्ण शुद्ध खाद्यान्न सामानहरू</p>
+            </div>
+
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="icon">🌾</div>
+                    <h3>दाल, चामल र पिठो</h3>
+                    <p>बासमती चामल, जिरा मसिनो, मुसुरो, रहर दाल, पिठो तथा मैदा।</p>
+                </div>
+                <div class="category-card">
+                    <div class="icon">🧂</div>
+                    <h3>तेल, घ्यू र मसला</h3>
+                    <p>शुद्ध तोरीको तेल, सूर्यमुखी तेल, घ्यू, जिरा, धनियाँ र बेसार।</p>
+                </div>
+                <div class="category-card">
+                    <div class="icon">☕</div>
+                    <h3>चिया, चिनी र खाजा</h3>
+                    <p>इलामको चियापत्ती, चिनी, कफी, बिस्कुट, चाउचाउ र ड्राइफ्रुट्स।</p>
+                </div>
+                <div class="category-card">
+                    <div class="icon">🧼</div>
+                    <h3>सरसफाइका सामान</h3>
+                    <p>साबुन, सर्फ, कोलगेट, स्याम्पु, ब्रस तथा फ्लोर क्लिनरहरू।</p>
+                </div>
+            </div>
+
+            <!-- Google AdSense Unit Placement -->
+            <div class="adsense-box">
+                📢 Google AdSense विज्ञापन स्थान (खाता प्रमाणीकरण पछि यहाँ Ads देखिनेछन्)
+            </div>
+        </main>
+    </div>
+
+    <!-- 2. ABOUT US VIEW (हाम्रो बारेमा) -->
+    <div id="view-about" class="tab-content">
+        <main class="container">
+            <div class="policy-card">
+                <h2>हाम्रो बारेमा (About Us)</h2>
+                <p><strong>लम्साल किराना स्टोर्स (lamsalkiranastores.com.np)</strong> मा तपाईंलाई हार्दिक स्वागत छ। हामी दैनिक जीवनमा आवश्यक पर्ने गुणस्तरीय, ताजा र शुद्ध खाद्यान्न तथा घरायसी किराना सामानहरू उचित मूल्यमा उपलब्ध गराउने एक विश्वसनीय पसल हौँ।</p>
+                
+                <h3>हाम्रो उद्देश्य (Our Mission)</h3>
+                <p>हाम्रो मुख्य उद्देश्य भनेको हरेक नेपालीको भान्सासम्म मिसावटमुक्त, स्वच्छ र स्वास्थ्यवर्धक खाद्यान्न पुर्‍याउनु हो। हामी उपभोक्ताको विश्वास र सन्तुष्टिलाई नै हाम्रो मुख्य सफलता मान्दछौं।</p>
+
+                <h3>हाम्रा मुख्य विशेषताहरू:</h3>
+                <ul>
+                    <li>१००% शुद्ध र आधिकारिक ब्रान्डका खाद्यान्न मात्र बिक्री गरिने।</li>
+                    <li>बजारभाउ अनुसार सस्तो र सुलभ दररेट।</li>
+                    <li>छिटो तथा भरपर्दो स्थानीय होम डेलिभरी सेवा।</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <!-- 3. CONTACT US VIEW (सम्पर्क) -->
+    <div id="view-contact" class="tab-content">
+        <main class="container">
+            <div class="policy-card">
+                <h2>हामीलाई सम्पर्क गर्नुहोस् (Contact Us)</h2>
+                <div class="contact-grid">
+                    <div class="info-pane">
+                        <h3>पसलको सम्पर्क विवरण</h3>
+                        <p>📍 <strong>ठेगाना:</strong> मुख्य बजार रोड, नेपाल</p>
+                        <p>📧 <strong>आधिकारिक इमेल:</strong> info@lamsalkiranastores.com.np</p>
+                        <p>🌐 <strong>वेबसाइट:</strong> lamsalkiranastores.com.np</p>
+                        <p>📞 <strong>फोन / WhatsApp:</strong> +९७७ ९८००००००००</p>
+                        <p>⏰ <strong>पसल खुल्ने समय:</strong> बिहान ६:०० देखि बेलुका ८:३० सम्म</p>
+                    </div>
+
+                    <div>
+                        <h3>हामीलाई सन्देश पठाउनुहोस्</h3>
+                        <form action="mailto:info@lamsalkiranastores.com.np" method="post" enctype="text/plain">
+                            <label>तपाईंको नाम:</label>
+                            <input type="text" name="name" required placeholder="आफ्नो पूरा नाम">
+                            <label>फोन नम्बर / इमेल:</label>
+                            <input type="text" name="contact" required placeholder="सम्पर्क नम्बर वा इमेल">
+                            <label>सन्देश वा सामानको सूची:</label>
+                            <textarea name="message" rows="4" required placeholder="सामानको लिस्ट वा केही सोध्न मन लागेको कुरा..."></textarea>
+                            <button type="submit" class="btn-submit">सन्देश पठाउनुहोस्</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 4. PRIVACY POLICY VIEW (गोपनीयता नीति - AdSense Required) -->
+    <div id="view-privacy" class="tab-content">
+        <main class="container">
+            <div class="policy-card">
+                <h2>गोपनीयता नीति (Privacy Policy)</h2>
+                <p>पछिल्लो पटक अपडेट गरिएको: मार्च २०२५</p>
+                <p><strong>lamsalkiranastores.com.np</strong> मा हाम्रो मुख्य प्राथमिकता हाम्रा प्रयोगकर्ताहरूको गोपनीयता सुरक्षित राख्नु हो। यो गोपनीयता नीतिले हामीद्वारा संकलन गरिएका जानकारी र त्यसको सुरक्षित प्रयोगबारे स्पष्ट पार्दछ।</p>
+
+                <h3>लग फाइलहरू (Log Files)</h3>
+                <p>हामी मानक लग फाइलहरू प्रयोग गर्छौं जसले भिजिटरहरूले साइट खोल्दा IP ठेगाना, ब्राउजर प्रकार, मिति र समय जस्ता सामान्य तथ्यांक मात्र रेकर्ड गर्छ। यसले कुनै पनि व्यक्तिगत पहिचान संकलन गर्दैन।</p>
+
+                <h3>कुकिज र वेब बीकनहरू (Cookies)</h3>
+                <p>प्रयोगकर्ताको सहजता र प्राथमिकताहरू सुरक्षित राख्न हामी कुकिज प्रयोग गर्न सक्दछौं।</p>
+
+                <h3>Google AdSense र DoubleClick DART Cookie</h3>
+                <p>Google हाम्रो आधिकारिक तेस्रो-पक्ष विज्ञापन साझेदार (Third-Party Vendor) हो। Google ले हाम्रा आगन्तुकहरूलाई विज्ञापन देखाउन DART कुकीहरूको प्रयोग गर्दछ। प्रयोगकर्ताहरूले चाहेमा गुगलको विज्ञापन नीतिमा गई यसलाई अस्वीकार गर्न सक्नुहुन्छ: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="nofollow">Google Privacy & Terms</a></p>
+
+                <h3>सम्पर्क इमेल</h3>
+                <p>गोपनीयता सम्बन्धी कुनै जिज्ञासा भएमा हामीलाई <strong>info@lamsalkiranastores.com.np</strong> मा सिधै सम्पर्क गर्न सक्नुहुन्छ।</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- 5. TERMS AND CONDITIONS VIEW (नियम तथा सर्तहरू) -->
+    <div id="view-terms" class="tab-content">
+        <main class="container">
+            <div class="policy-card">
+                <h2>नियम तथा सर्तहरू (Terms & Conditions)</h2>
+                <p><strong>lamsalkiranastores.com.np</strong> मा सामान खरिद गर्दा वा साइट प्रयोग गर्दा निम्न सर्तहरू लागु हुनेछन्:</p>
+
+                <h3>१. सामानको अर्डर र मूल्य</h3>
+                <p>हाम्रो साइटमा उपलब्ध सामानहरूको मूल्य बजारको दररेट अनुसार परिमार्जन हुन सक्छ। अर्डर कन्फर्म भएपछि मात्र सामान डेलिभरीका लागि पठाइनेछ।</p>
+
+                <h3>२. डेलिभरी र भुक्तानी</h3>
+                <p>सामान प्राप्त भएपछि नगद (Cash on Delivery) वा अनलाइन वालेट (eSewa/Khalti) मार्फत भुक्तानी गर्न सकिनेछ।</p>
+
+                <h3>३. सामान फिर्ता नीति (Returns & Refund)</h3>
+                <p>यदि तपाईंले प्राप्त गर्नुभएको कुनै सामानको सिल फुटेको वा म्याद सकिएको पाइएमा २४ घण्टाभित्र तुरुन्तै फिर्ता वा साटफेर गर्न सकिनेछ।</p>
+
+                <h3>४. कानुनी अधिकार</h3>
+                <p>यस वेबसाइटका सम्पूर्ण ब्रान्डिङ, लोगो र सामग्रीहरू लम्साल किराना स्टोर्सको स्वामित्वमा रहेका छन्।</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer Area -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>लम्साल किराना स्टोर्स</h4>
+                <p>तपाईंको दैनिक भान्साको आवश्यकता पूरा गर्ने एक मात्र भरपर्दो किराना पसल। शुद्ध सामान, सुलभ मूल्य।</p>
+            </div>
+            <div>
+                <h4>मुख्य पानाहरू</h4>
+                <ul>
+                    <li><a onclick="switchPage('home')">गृहपृष्ठ (Home)</a></li>
+                    <li><a onclick="switchPage('about')">हाम्रो बारेमा (About Us)</a></li>
+                    <li><a onclick="switchPage('contact')">सम्पर्क (Contact Us)</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>कानुनी नीतिहरू (AdSense Legal)</h4>
+                <ul>
+                    <li><a onclick="switchPage('privacy')">गोपनीयता नीति (Privacy Policy)</a></li>
+                    <li><a onclick="switchPage('terms')">नियम तथा सर्तहरू (Terms & Conditions)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2025 Lamsal Kirana Stores (lamsalkiranastores.com.np). सर्वाधिकार सुरक्षित।</p>
+        </div>
+    </footer>
+
+    <!-- Single Page Interactive Navigation Script -->
+    <script>
+        function switchPage(pageId) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Remove active style from all nav buttons
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            // Show current view
+            const target = document.getElementById('view-' + pageId);
+            if (target) {
+                target.classList.add('active');
+            }
+
+            // Set active navigation button
+            const activeNav = document.getElementById('nav-' + pageId);
+            if (activeNav) {
+                activeNav.classList.add('active');
+            }
+
+            // Scroll smoothly to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
